@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Actor&family=Archivo+Black&display=swap" rel="stylesheet">
+    
+    <title>NEXUM</title>
+</head>
+
+<body>
+  <!-- Cabeçalho html -->
+  <header>
+
+    <div class="logo">
+      <img src="./img/logoazullaranja.svg" alt="Logo NEXUM">
+    </div>
+
+    <nav class="menu">
+      <a href="#beneficios">Benefícios</a>
+      <a href="#">Contato</a>
+      <a href="#" class="header-btn">Login</a>
+    </nav>
+
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main>
+    <div class="decorations" id="decorations"></div>
+
+    <section class="hero">
+      <h2>
+        Conectando Universidades e Empresas
+      </h2>
+
+      <p>
+        Construa o futuro através de parcerias estratégicas em projetos de inovação.
+        Unimos o conhecimento acadêmico com a experiência empresarial.
+      </p>
+
+      <div class="buttons">
+
+        <a href="#como-funciona" class="btn btn-primary">
+          Conheça o site →
+        </a>
+      
+        <a href="./cadastro.html" class="btn btn-secondary">
+          Faça seu cadastro
+        </a>
+      
+      </div>
+    </section>
+  </main>
+
+  <!-- COMO FUNCIONA -->
+  <section class="how-it-works" id="como-funciona">
+
+  <h2>Como Funciona</h2>
+  <p class="subtitle">
+    Conecte-se em três passos simples
+  </p>
+
+  <div class="steps">
+
+    <div class="step">
+      <div class="circle">1</div>
+      <h3>EXPLORE PROJETOS</h3>
+      <p>
+        Navegue por projetos inovadores
+        de universidades renomadas
+      </p>
+    </div>
+
+    <div class="step">
+      <div class="circle">2</div>
+      <h3>CONECTE-SE</h3>
+      <p>
+        Entre em contato com
+        universidades e empresas
+        de interesse
+      </p>
+    </div>
+
+    <div class="step">
+      <div class="circle">3</div>
+      <h3>COLABORE</h3>
+      <p>
+        Desenvolva parcerias estratégicas
+        e impulsione a inovação
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- BENEFÍCIOS -->
+<section class="benefits" id="beneficios">
+
+  <h2>BENEFÍCIOS PARA TODOS</h2>
+
+  <div class="benefits-grid">
+
+    <div class="benefit-box">
+
+      <h3>🏛️ PARA UNIVERSIDADE</h3>
+
+      <ul>
+        <li>Visibilidade de Pesquisas</li>
+        <li>Financiamento de Projeto</li>
+        <li>Inserção de Talentos</li>
+      </ul>
+
+    </div>
+
+    <div class="benefit-box">
+
+      <h3>💼 PARA EMPRESAS</h3>
+
+      <ul>
+        <li>Acesso a Inovação</li>
+        <li>Talentos Qualificados</li>
+        <li>Soluções Técnicas</li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</section>
+
+  <footer>
+    © 2026 NEXUM. Todos os direitos reservados.
+  </footer>
+
+  <!-- Java script -->
+  <script>
+    
+    // Triangulos
+
+    const container = document.getElementById("decorations");
+
+    const triangles = [
+      { x: 2, y: 78, size: "small", color: "yellow", rot: 20 },
+      { x: 8, y: 80, size: "large", color: "orange", rot: 70 },
+      { x: 15, y: 84, size: "yellow", color: "yellow", rot: 100 },
+      { x: 4, y: 90, size: "large", color: "yellow", rot: 60 },
+      { x: 18, y: 92, size: "small", color: "orange", rot: 310 },
+      { x: 28, y: 90, size: "large", color: "orange", rot: 100 },
+      { x: 35, y: 87, size: "large", color: "orange", rot: 140 },
+      { x: 42, y: 88, size: "yellow", color: "yellow", rot: 60 },
+
+      { x: 52, y: 78, size: "yellow", color: "yellow", rot: 120 },
+      { x: 58, y: 80, size: "orange", color: "orange", rot: 70 },
+      { x: 64, y: 84, size: "yellow", color: "yellow", rot: 90 },
+      { x: 70, y: 86, size: "large", color: "orange", rot: 40 },
+      { x: 78, y: 90, size: "yellow", color: "yellow", rot: 110 },
+
+      { x: 90, y: 16, size: "small", color: "orange", rot: 45 },
+      { x: 94, y: 20, size: "yellow", color: "yellow", rot: 130 },
+      { x: 98, y: 24, size: "small", color: "orange", rot: 70 },
+      { x: 88, y: 32, size: "small", color: "orange", rot: 70 },
+      { x: 92, y: 38, size: "large", color: "yellow", rot: 90 },
+      { x: 96, y: 46, size: "large", color: "yellow", rot: 160 },
+      { x: 88, y: 52, size: "small", color: "orange", rot: 190 },
+      { x: 86, y: 58, size: "large", color: "orange", rot: 70 },
+      { x: 92, y: 64, size: "small", color: "yellow", rot: 120 },
+      { x: 97, y: 72, size: "large", color: "yellow", rot: 100 },
+      { x: 84, y: 76, size: "large", color: "orange", rot: 100 },
+      { x: 92, y: 82, size: "small", color: "orange", rot: 60 }
+    ];
+
+    triangles.forEach((t, index) => {
+      const el = document.createElement("div");
+
+      el.className = `triangle ${t.color} ${t.size}`;
+
+      el.style.left = `${t.x}%`;
+      el.style.top = `${t.y}%`;
+      el.style.setProperty("--rotate", `${t.rot}deg`);
+
+      el.style.animationDelay = `${index * 0.2}s`;
+
+      container.appendChild(el);
+    });
+  </script>
+
+</body>
+</html>

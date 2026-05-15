@@ -1,0 +1,925 @@
+
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   VARIÁVEIS
+========================= */
+
+:root {
+  --bg-1: #f4f4f7;
+  --bg-2: #e9e9ef;
+
+  --primary: #121089;
+  --primary-hover: #2f37c7;
+
+  --orange: #ff7b00;
+  --yellow: #ff9900;
+
+  --text: black;
+
+  --shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   BASE
+========================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+  background: linear-gradient(
+    180deg,
+    var(--bg-1),
+    var(--bg-2)
+  );
+
+  color: var(--text);
+
+  font-family: 'Actor', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+
+  animation: fadeIn 1.2s ease;
+
+  position: relative;
+
+  overflow-x: hidden;
+}
+
+/* =========================
+   FADE
+========================= */
+
+@keyframes fadeIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+  width: 100%;
+  height: 92px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 70px;
+
+  background: rgba(255, 255, 255, 0.2);
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+  backdrop-filter: blur(6px);
+
+  z-index: 20;
+
+  position: relative;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+/* =========================
+   HERO ORIGINAL
+========================= */
+
+main {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 60px 20px 120px;
+
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+}
+
+.hero {
+  width: 100%;
+  max-width: 900px;
+
+  text-align: center;
+
+  position: relative;
+  z-index: 5;
+}
+
+.hero h2 {
+  font-family: 'Archivo Black', sans-serif;
+
+  font-size: clamp(2.5rem, 5vw, 5rem);
+
+  line-height: 1.05;
+
+  color: var(--primary);
+
+  margin-bottom: 28px;
+
+  letter-spacing: -1px;
+}
+
+.hero p {
+  max-width: 760px;
+
+  margin: 0 auto;
+
+  font-size: clamp(1rem, 1.5vw, 1.45rem);
+
+  line-height: 1.5;
+
+  color: #232323;
+
+  font-weight: 400;
+
+  font-family: 'Actor', sans-serif;
+}
+
+/* =========================
+   BOTÕES ORIGINAIS
+========================= */
+
+.buttons {
+  margin-top: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 35px;
+
+  flex-wrap: wrap;
+}
+
+.btn {
+  min-width: 200px;
+
+  padding: 18px 28px;
+
+  border: none;
+
+  cursor: pointer;
+
+  font-size: 1rem;
+
+  font-family: 'Actor', sans-serif;
+
+  border-radius: 8px;
+
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    background 0.28s ease;
+
+  box-shadow: var(--shadow);
+
+  position: relative;
+
+  overflow: hidden;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+}
+
+.btn::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(255, 255, 255, 0.18);
+
+  transition: left 0.45s ease;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn:hover {
+  transform: translateY(-4px) scale(1.02);
+
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.btn-primary {
+  background: linear-gradient(
+    135deg,
+    #1B53BF,
+    #121089
+  );
+
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(
+    135deg,
+    #3953ec,
+    #2d2db7
+  );
+}
+
+.btn-secondary {
+  background: linear-gradient(
+    135deg,
+    #ff9500,
+    #ff7B00
+  );
+
+  color: #111;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(
+    135deg,
+    #ffab26,
+    #ff7f14
+  );
+}
+
+/* =========================
+   TRIÂNGULOS
+========================= */
+
+.decorations {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+.triangle {
+  position: absolute;
+
+  width: 0;
+  height: 0;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  opacity: 0.95;
+
+  animation: float 6s ease-in-out infinite;
+
+  filter: drop-shadow(
+    0 4px 10px rgba(0, 0, 0, 0.05)
+  );
+}
+
+.triangle.orange {
+  border-left: 26px solid transparent;
+  border-right: 26px solid transparent;
+  border-bottom: 48px solid var(--orange);
+}
+
+.triangle.yellow {
+  border-left: 22px solid transparent;
+  border-right: 22px solid transparent;
+  border-bottom: 40px solid var(--yellow);
+}
+
+.triangle.small.orange {
+  border-left-width: 12px;
+  border-right-width: 12px;
+  border-bottom-width: 22px;
+}
+
+.triangle.small.yellow {
+  border-left-width: 10px;
+  border-right-width: 10px;
+  border-bottom-width: 20px;
+}
+
+.triangle.large.orange {
+  border-left-width: 36px;
+  border-right-width: 36px;
+  border-bottom-width: 68px;
+}
+
+.triangle.large.yellow {
+  border-left-width: 34px;
+  border-right-width: 34px;
+  border-bottom-width: 62px;
+}
+
+@keyframes float {
+
+  0% {
+    transform:
+      translateY(0px)
+      rotate(var(--rotate));
+  }
+
+  50% {
+    transform:
+      translateY(-10px)
+      rotate(calc(var(--rotate) + 4deg));
+  }
+
+  100% {
+    transform:
+      translateY(0px)
+      rotate(var(--rotate));
+  }
+}
+
+/* =========================
+   COMO FUNCIONA
+========================= */
+
+.how-it-works {
+  padding: 110px 30px;
+
+  text-align: center;
+}
+
+.how-it-works h2 {
+  font-size: clamp(2rem, 3vw, 3rem);
+
+  color: var(--primary);
+
+  font-family: 'Archivo Black', sans-serif;
+}
+
+.subtitle {
+  margin-top: 10px;
+
+  font-size: 1.1rem;
+}
+
+.steps {
+  margin-top: 70px;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 40px;
+
+  max-width: 1200px;
+
+  margin-inline: auto;
+}
+
+.step {
+  text-align: center;
+}
+
+.circle {
+  width: 120px;
+  height: 120px;
+
+  border-radius: 50%;
+
+  background: #2d4fc2;
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 24px;
+
+  font-size: 2.3rem;
+}
+
+.step h3 {
+  font-size: 1.35rem;
+
+  color: var(--primary);
+
+  margin-bottom: 14px;
+
+  font-family: 'Archivo Black', sans-serif;
+}
+
+.step p {
+  font-size: 1rem;
+
+  line-height: 1.5;
+
+  max-width: 300px;
+
+  margin: auto;
+}
+
+/* =========================
+   BENEFÍCIOS
+========================= */
+
+.benefits {
+  padding: 110px 30px 180px;
+}
+
+.benefits h2 {
+  text-align: center;
+
+  font-size: clamp(2rem, 3vw, 3rem);
+
+  color: var(--primary);
+
+  font-family: 'Archivo Black', sans-serif;
+
+  margin-bottom: 80px;
+}
+
+.benefits-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 50px;
+
+  max-width: 1100px;
+
+  margin: auto;
+}
+
+.benefit-box {
+  background: rgba(255,255,255,0.18);
+
+  border-radius: 18px;
+
+  padding: 38px;
+
+  backdrop-filter: blur(6px);
+}
+
+.benefit-box h3 {
+  font-size: 1.5rem;
+
+  color: var(--primary);
+
+  margin-bottom: 30px;
+
+  font-family: 'Archivo Black', sans-serif;
+}
+
+.benefit-box ul {
+  list-style: none;
+}
+
+.benefit-box li {
+  position: relative;
+
+  padding-left: 26px;
+
+  margin-bottom: 22px;
+
+  font-size: 1.05rem;
+
+  line-height: 1.5;
+}
+
+.benefit-box li::before {
+  content: "▶";
+
+  position: absolute;
+
+  left: 0;
+
+  color: var(--yellow);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  position: fixed;
+
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+
+  text-align: center;
+
+  padding: 18px 20px;
+
+  background: rgba(255, 255, 255, 0.075);
+
+  backdrop-filter: blur(5px);
+
+  color: #222;
+
+  font-size: 1rem;
+
+  font-family: 'Actor', sans-serif;
+
+  border-top: 1px solid rgba(0,0,0,0.06);
+
+  z-index: 999;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 1000px) {
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+
+  header {
+    padding: 0 24px;
+  }
+
+  .hero h2 {
+    margin-bottom: 22px;
+  }
+
+  .hero p {
+    max-width: 92%;
+  }
+
+  .buttons {
+    gap: 18px;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  main {
+    padding-top: 30px;
+  }
+
+  .logo img {
+    height: 48px;
+  }
+
+  .hero h2 {
+    font-size: 2.4rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .circle {
+    width: 100px;
+    height: 100px;
+
+    font-size: 2rem;
+  }
+
+  .step h3,
+  .benefit-box h3 {
+    font-size: 1.2rem;
+  }
+
+  .step p,
+  .benefit-box li {
+    font-size: 0.95rem;
+  }
+
+  footer {
+    font-size: 0.92rem;
+  }
+}
+
+/* Nav bar header */
+
+header {
+  justify-content: space-between;
+}
+
+.menu {
+  display: flex;
+  gap: 35px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--primary);
+  font-size: 20px;
+  font-family: 'Actor', sans-serif;
+  transition: 0.25s;
+}
+
+.menu a:hover {
+  color: var(--orange);
+}
+
+
+/* =========================
+   PÁGINA CADASTRO
+========================= */
+
+.register-page {
+  min-height: calc(100vh - 92px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 80px 20px;
+}
+
+/* =========================
+   CARD CADASTRO
+========================= */
+
+.register-container {
+  width: 100%;
+  max-width: 900px;
+
+  background: rgba(255,255,255,0.18);
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  backdrop-filter: blur(6px);
+
+  box-shadow: var(--shadow);
+
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* =========================
+   TABS
+========================= */
+
+.register-tabs {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+}
+
+.tab {
+  height: 90px;
+
+  border: none;
+
+  background: transparent;
+
+  font-size: 1.5rem;
+
+  font-family: 'Archivo Black', sans-serif;
+
+  color: var(--primary);
+
+  cursor: pointer;
+
+  transition: 0.25s;
+
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+}
+
+.tab:first-child {
+  border-right: 1px solid rgba(0,0,0,0.12);
+}
+
+.tab.active {
+  background: rgba(255,255,255,0.25);
+}
+
+/* =========================
+   CONTEÚDO CADASTRO
+========================= */
+
+.register-content {
+  padding: 60px;
+}
+
+.register-content h2 {
+  text-align: center;
+
+  font-size: 2rem;
+
+  color: var(--primary);
+
+  margin-bottom: 50px;
+
+  font-family: 'Archivo Black', sans-serif;
+}
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+.form-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 30px 35px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  color: var(--primary);
+
+  font-size: 1.1rem;
+
+  margin-bottom: 10px;
+}
+
+.input-group input {
+  height: 52px;
+
+  border-radius: 10px;
+
+  border: 1px solid rgba(0,0,0,0.15);
+
+  background: rgba(255,255,255,0.35);
+
+  padding: 0 16px;
+
+  font-size: 1rem;
+
+  font-family: 'Actor', sans-serif;
+
+  outline: none;
+
+  transition:
+    border 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.input-group input:focus {
+  border-color: var(--primary);
+
+  box-shadow: 0 0 0 4px rgba(18,16,137,0.08);
+
+  background: rgba(255,255,255,0.55);
+}
+
+/* =========================
+   BOTÃO CADASTRO
+========================= */
+
+.register-btn {
+  width: 100%;
+
+  height: 58px;
+
+  margin-top: 45px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: linear-gradient(
+    135deg,
+    #1B53BF,
+    #121089
+  );
+
+  color: white;
+
+  font-size: 1rem;
+
+  font-family: 'Archivo Black', sans-serif;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+  box-shadow: var(--shadow);
+}
+
+.register-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 12px 22px rgba(0,0,0,0.12);
+}
+
+/* =========================
+   LOGIN
+========================= */
+
+.register-login {
+  margin-top: 35px;
+
+  text-align: center;
+
+  font-size: 1rem;
+
+  color: #333;
+}
+
+.register-login a {
+  color: var(--primary);
+
+  text-decoration: none;
+
+  font-family: 'Archivo Black', sans-serif;
+}
+
+.register-login a:hover {
+  color: var(--orange);
+}
+
+/* =========================
+   RESPONSIVO CADASTRO
+========================= */
+
+@media (max-width: 800px) {
+
+  .register-content {
+    padding: 40px 24px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tab {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .register-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .input-group label {
+    font-size: 1rem;
+  }
+
+  .register-btn {
+    height: 54px;
+  }
+}
