@@ -767,6 +767,14 @@ header {
 }
 
 /* =========================
+   TÍTULO UNIVERSIDADE
+========================= */
+
+.orange-title {
+  color: var(--orange) !important;
+}
+
+/* =========================
    FORMULÁRIO
 ========================= */
 
@@ -922,4 +930,89 @@ header {
   .register-btn {
     height: 54px;
   }
+}
+
+/* =========================
+   TROCA DE FORM NO CADASTRO
+========================= */
+
+.register-form {
+  display: none;
+}
+
+.active-form {
+  display: block;
+}
+
+/* =========================
+   UNIVERSIDADE LARANJA
+========================= */
+
+.orange-title {
+  color: var(--orange);
+}
+
+.orange-group label {
+  color: var(--orange);
+}
+
+.orange-group input:focus {
+  border-color: var(--orange);
+
+  box-shadow: 0 0 0 4px rgba(255,123,0,0.12);
+}
+
+/* =========================
+   BOTÃO UNIVERSIDADE
+========================= */
+
+.university-btn {
+  background: linear-gradient(
+    135deg,
+    #ff9900,
+    #ff7b00
+  );
+
+  color: white;
+}
+
+.university-btn:hover {
+  background: linear-gradient(
+    135deg,
+    #ffae2b,
+    #ff8a1c
+  );
+}
+
+/* =========================
+   TAB ATIVA UNIVERSIDADE
+========================= */
+
+.tab.orange-active {
+  background: rgba(255,123,0,0.12);
+
+  color: var(--orange);
+}
+
+/* =========================
+   TABS ATIVAS
+========================= */
+
+.blue-active {
+  background: rgba(18, 16, 137, 0.10);
+}
+
+.orange-active {
+  background: rgba(255, 123, 0, 0.12);
+}
+
+
+/* =========================
+   INPUT FILE
+========================= */
+
+input[type="file"] {
+  border: none;
+  background: transparent;
+  padding: 0;
 }

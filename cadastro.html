@@ -41,98 +41,188 @@
 
       <div class="register-tabs">
 
-        <button class="tab active">
-          Empresa
-        </button>
+    <button class="tab blue-active" id="empresa-tab">
+      Empresa
+    </button>
 
-        <button class="tab">
-          Universidade
-        </button>
+      <button class="tab" id="universidade-tab">
+      Universidade
+    </button>
 
+    </div>
+
+<!-- FORM -->
+
+<div class="register-content">
+
+  <!-- FORM EMPRESA -->
+
+  <form class="register-form active-form" id="empresa-form">
+
+    <h2>
+      Faça seu cadastro de empresa
+    </h2>
+
+    <div class="form-grid">
+
+      <div class="input-group">
+        <label>Nome da empresa</label>
+        <input type="text">
       </div>
 
-      <!-- FORM -->
-
-      <div class="register-content">
-
-        <h2>
-          Faça seu cadastro
-        </h2>
-
-        <form class="register-form">
-
-          <div class="form-grid">
-
-            <div class="input-group">
-              <label>Nome da empresa</label>
-              <input type="text">
-            </div>
-
-            <div class="input-group">
-              <label>Estado</label>
-              <input type="text">
-            </div>
-
-            <div class="input-group">
-              <label>Email</label>
-              <input type="email">
-            </div>
-
-            <div class="input-group">
-              <label>Cidade</label>
-              <input type="text">
-            </div>
-
-            <div class="input-group">
-              <label>Telefone</label>
-              <input type="text">
-            </div>
-
-            <div class="input-group">
-              <label>Endereço</label>
-              <input type="text">
-            </div>
-
-            <div class="input-group">
-              <label>CNPJ</label>
-              <input type="text">
-            </div>
-
-            <div class="input-group">
-              <label>Área de atuação</label>
-              <input type="text">
-            </div>
-
-            <div class="input-group">
-              <label>Senha</label>
-              <input type="password">
-            </div>
-
-            <div class="input-group">
-              <label>Upload da Logo</label>
-              <input type="file">
-            </div>
-
-          </div>
-
-          <button type="submit" class="register-btn">
-            Criar cadastro
-          </button>
-
-        </form>
-
-        <p class="register-login">
-          Já possui cadastro?
-          <a href="#">
-            Faça seu login
-          </a>
-        </p>
-
+      <div class="input-group">
+        <label>Estado</label>
+        <input type="text">
       </div>
 
-    </section>
+      <div class="input-group">
+        <label>Email</label>
+        <input type="email">
+      </div>
 
-  </main>
+      <div class="input-group">
+        <label>Cidade</label>
+        <input type="text">
+      </div>
+
+      <div class="input-group">
+        <label>Telefone</label>
+        <input type="text">
+      </div>
+
+      <div class="input-group">
+        <label>Endereço</label>
+        <input type="text">
+      </div>
+
+      <div class="input-group">
+        <label>CNPJ</label>
+        <input type="text">
+      </div>
+
+      <div class="input-group">
+        <label>Área de atuação</label>
+        <input type="text">
+      </div>
+
+      <div class="input-group">
+        <label>Senha</label>
+        <input type="password">
+      </div>
+
+      <div class="input-group">
+        <label>Upload da Logo</label>
+        <input type="file">
+      </div>
+
+    </div>
+
+    <button type="submit" class="register-btn">
+      Criar cadastro
+    </button>
+
+  </form>
+
+  <!-- FORM UNIVERSIDADE -->
+
+  <form class="register-form" id="universidade-form">
+
+    <h2 class="orange-title">
+      Faça seu cadastro de universidade
+    </h2>
+
+    <div class="form-grid">
+
+      <div class="input-group orange-group">
+        <label>Nome da universidade</label>
+        <input type="text">
+      </div>
+
+      <div class="input-group orange-group">
+        <label>Estado</label>
+        <input type="text">
+      </div>
+
+      <div class="input-group orange-group">
+        <label>Email institucional</label>
+        <input type="email">
+      </div>
+
+      <div class="input-group orange-group">
+        <label>Cidade</label>
+        <input type="text">
+      </div>
+
+      <div class="input-group orange-group">
+        <label>Telefone</label>
+        <input type="text">
+      </div>
+
+      <div class="input-group orange-group">
+        <label>CNPJ</label>
+        <input type="text">
+      </div>
+
+      <div class="input-group orange-group">
+        <label>Senha</label>
+        <input type="password">
+      </div>
+
+      <div class="input-group orange-group">
+        <label>Upload da Logo</label>
+        <input type="file">
+      </div>
+
+    </div>
+
+    <button type="submit" class="register-btn university-btn">
+      Criar cadastro
+    </button>
+
+  </form>
+
+  <p class="register-login">
+    Já possui cadastro?
+    <a href="#">
+      Faça seu login
+    </a>
+  </p>
+
+</div>
+
+<script>
+
+  const empresaTab = document.getElementById("empresa-tab");
+const universidadeTab = document.getElementById("universidade-tab");
+
+const empresaForm = document.getElementById("empresa-form");
+const universidadeForm = document.getElementById("universidade-form");
+
+empresaTab.addEventListener("click", () => {
+
+  empresaTab.classList.add("blue-active");
+  universidadeTab.classList.remove("orange-active");
+
+  empresaForm.classList.add("active-form");
+  universidadeForm.classList.remove("active-form");
+
+});
+
+universidadeTab.addEventListener("click", () => {
+
+  universidadeTab.classList.add("orange-active");
+  empresaTab.classList.remove("blue-active");
+
+  universidadeForm.classList.add("active-form");
+  empresaForm.classList.remove("active-form");
+
+});
+
+</script>
+
+</section>
+
+</main>
 
 </body>
 </html>
