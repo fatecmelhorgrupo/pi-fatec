@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./css/estilo.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Actor&family=Archivo+Black&display=swap" rel="stylesheet">
+
+  <title>Login | NEXUM</title>
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="logo">
+      <img src="./img/logoazullaranja.svg" alt="Logo NEXUM">
+    </div>
+
+    <nav class="menu">
+      <a href="index.html">Início</a>
+      <a href="./sobrenos.html">Sobre nós</a>
+      <a href="cadastro.html">Cadastro</a>
+    </nav>
+
+  </header>
+
+  <!-- MAIN -->
+
+  <main class="login-main">
+
+    <section class="login-container">
+
+      <div class="login-wrapper">
+
+        <!-- LADO ESQUERDO -->
+
+        <div class="login-side">
+
+            <div class="login-decorations"></div>
+
+          <h2>
+            Bem-vindo de volta
+          </h2>
+
+          <p>
+            Entre na sua conta e continue conectando
+            universidades e empresas através da inovação.
+          </p>
+
+        </div>
+
+        <!-- LADO DIREITO -->
+
+        <div class="login-box">
+
+          <h1>
+            Login
+          </h1>
+
+          <p class="login-subtitle">
+            Entre na sua conta para continuar
+          </p>
+
+          <form class="login-form">
+
+            <div class="input-group">
+
+              <label>Email</label>
+
+              <input
+                type="email"
+                placeholder="Digite seu email"
+              >
+
+            </div>
+
+            <div class="input-group">
+
+              <label>Senha</label>
+
+              <input
+                type="password"
+                placeholder="Digite sua senha"
+              >
+
+            </div>
+
+            <button type="submit" class="login-btn">
+              Entrar
+            </button>
+
+          </form>
+
+          <p class="register-link">
+
+            Ainda não possui conta?
+
+            <a href="cadastro.html">
+              Faça seu cadastro
+            </a>
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <footer>© 2026 NEXUM. Todos os direitos reservados.</footer>
+
+  </main>
+
+
+<script>
+
+/* =========================
+   TRIÂNGULOS LOGIN
+========================= */
+
+const loginContainer = document.querySelector(".login-decorations");
+
+const loginTriangles = [
+
+  { x: 29, y: 82, size: "small", color: "yellow", rot: 20 },
+
+  { x: 10, y: 82, size: "large", color: "orange", rot: 70 },
+
+  { x: 42, y: 72, size: "large", color: "orange", rot: 120 },
+
+  { x: 58, y: 82, size: "small", color: "orange", rot: 40 },
+
+  { x: 82, y: 66, size: "small", color: "yellow", rot: 110 },
+
+  { x: 72, y: 88, size: "large", color: "yellow", rot: 160 },
+
+  { x: 92, y: 58, size: "small", color: "orange", rot: 120 }
+
+];
+
+loginTriangles.forEach((t, index) => {
+
+  const el = document.createElement("div");
+
+  el.className = `triangle ${t.color} ${t.size}`;
+
+  el.style.left = `${t.x}%`;
+  el.style.top = `${t.y}%`;
+
+  el.style.setProperty("--rotate", `${t.rot}deg`);
+
+  el.style.animationDelay = `${index * 0.2}s`;
+
+  loginContainer.appendChild(el);
+
+});
+
+</script>
+</body>
+</html>

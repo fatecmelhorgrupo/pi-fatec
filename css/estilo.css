@@ -1,4 +1,3 @@
-
 /* =========================
    RESET
 ========================= */
@@ -1015,4 +1014,611 @@ input[type="file"] {
   border: none;
   background: transparent;
   padding: 0;
+}
+
+
+
+
+
+
+/* =========================
+   LOGIN MAIN
+========================= */
+
+.login-main {
+
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 60px 20px 120px;
+}
+
+/* =========================
+   LOGIN CONTAINER
+========================= */
+
+.login-container {
+
+  width: 100%;
+  max-width: 1150px;
+}
+
+/* =========================
+   LOGIN WRAPPER
+========================= */
+
+.login-wrapper {
+
+  width: 100%;
+
+  min-height: 680px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  background: rgba(255,255,255,0.20);
+
+  border-radius: 28px;
+
+  overflow: hidden;
+
+  backdrop-filter: blur(6px);
+
+  box-shadow: var(--shadow);
+}
+
+/* =========================
+   LADO ESQUERDO LOGIN
+========================= */
+
+.login-side {
+
+  background: linear-gradient(
+    180deg,
+    #1B53BF,
+    #121089
+  );
+
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 80px;
+}
+
+.login-side h2 {
+
+  font-size: clamp(2.5rem, 4vw, 4rem);
+
+  line-height: 1.1;
+
+  margin-bottom: 30px;
+
+  font-family: 'Archivo Black', sans-serif;
+}
+
+.login-side p {
+
+  font-size: 1.15rem;
+
+  line-height: 1.8;
+
+  opacity: 0.95;
+
+  max-width: 420px;
+}
+
+/* =========================
+   LOGIN BOX
+========================= */
+
+.login-box {
+
+  background: rgba(255,255,255,0.30);
+
+  backdrop-filter: blur(6px);
+
+  padding: 70px 55px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-box h1 {
+
+  text-align: center;
+
+  color: var(--primary);
+
+  font-family: 'Archivo Black', sans-serif;
+
+  font-size: 2.5rem;
+
+  margin-bottom: 14px;
+}
+
+.login-subtitle {
+
+  text-align: center;
+
+  color: #444;
+
+  margin-bottom: 40px;
+
+  font-size: 1rem;
+}
+
+/* =========================
+   FORM LOGIN
+========================= */
+
+.login-form {
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 24px;
+}
+
+.login-form .input-group {
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.login-form .input-group label {
+
+  color: var(--primary);
+
+  font-size: 1rem;
+}
+
+.login-form .input-group input {
+
+  height: 54px;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(0,0,0,0.10);
+
+  background: rgba(255,255,255,0.55);
+
+  padding: 0 16px;
+
+  outline: none;
+
+  font-size: 1rem;
+
+  transition: 0.25s;
+}
+
+.login-form .input-group input:focus {
+
+  border-color: var(--primary);
+
+  box-shadow: 0 0 0 4px rgba(18, 16, 137, 0.08);
+}
+
+/* =========================
+   LOGIN OPTIONS
+========================= */
+
+/* =========================
+   BOTÃO LOGIN
+========================= */
+
+.login-btn {
+
+  width: 100%;
+
+  height: 56px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    #1B53BF,
+    #121089
+  );
+
+  color: white;
+
+  font-size: 1rem;
+
+  font-family: 'Archivo Black', sans-serif;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    background 0.28s ease;
+
+  box-shadow: var(--shadow);
+}
+
+.login-btn:hover {
+
+  transform: translateY(-4px);
+
+  background: linear-gradient(
+    135deg,
+    #3953ec,
+    #2d2db7
+  );
+
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+/* =========================
+   REGISTER LINK
+========================= */
+
+.register-link {
+
+  margin-top: 34px;
+
+  text-align: center;
+
+  color: #444;
+}
+
+.register-link a {
+
+  text-decoration: none;
+
+  color: var(--primary);
+
+  font-family: 'Archivo Black', sans-serif;
+
+  transition: 0.25s;
+}
+
+.register-link a:hover {
+
+  color: var(--orange);
+}
+
+/* =========================
+   RESPONSIVO LOGIN
+========================= */
+
+@media (max-width: 950px) {
+
+  .login-wrapper {
+
+    grid-template-columns: 1fr;
+  }
+
+  .login-side {
+
+    padding: 55px 35px;
+
+    text-align: center;
+
+    align-items: center;
+  }
+
+  .login-side p {
+
+    max-width: 100%;
+  }
+
+  .login-box {
+
+    padding: 50px 28px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .login-side h2 {
+
+    font-size: 2.2rem;
+  }
+
+  .login-box h1 {
+
+    font-size: 2rem;
+  }
+
+  .login-options {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+}
+
+
+/* =========================
+   TRIÂNGULOS DO LOGIN-SIDE
+========================= */
+
+.login-side {
+  position: relative;
+  overflow: hidden;
+}
+
+.login-decorations {
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+}
+
+/* =========================
+   SOBRE NÓS
+========================= */
+
+.about-main {
+
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+
+  padding:
+    70px
+    20px
+    140px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-section {
+  width: 100%;
+
+  padding: 70px 40px 140px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 90px;
+}
+
+/* PRIMEIRA LINHA */
+
+.about-row-top {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  gap: 140px;
+
+  flex-wrap: wrap;
+}
+
+/* SEGUNDA LINHA */
+
+.about-row-bottom {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  gap: 140px;
+
+  flex-wrap: wrap;
+}
+
+.member-card {
+  width: 240px;
+  text-align: center;
+  padding: 10px;
+}
+
+.member-card img {
+
+  width: 185px;
+  height: 185px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1.5px solid var(--primary);
+  box-shadow: var(--shadow);
+  margin-bottom: 18px;
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.member-card img:hover {
+
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+.member-card h3 {
+  font-size: 1.7rem;
+  color: var(--primary);
+  font-family: 'Archivo Black', sans-serif;
+  margin-bottom: 12px;
+}
+
+.member-card a {
+  text-decoration: none;
+
+  color: var(--primary);
+
+  font-size: 1.15rem;
+
+  transition: 0.25s;
+}
+
+.member-card a:hover {
+  color: var(--orange);
+}
+
+/* =========================
+   RESPONSIVO ABOUT
+========================= */
+
+@media (max-width: 900px) {
+
+  .about-row-top,
+  .about-row-bottom {
+    gap: 60px;
+  }
+
+  .member-card img {
+    width: 130px;
+    height: 130px;
+  }
+
+  .member-card h3 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .about-section {
+    padding: 50px 20px 120px;
+  }
+
+  .about-row-top,
+  .about-row-bottom {
+    flex-direction: column;
+    align-items: center;
+
+    gap: 50px;
+  }
+}
+
+/* =========================
+   GRID EQUIPE
+========================= */
+
+.team-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(240px, 1fr));
+
+  gap: 70px 40px;
+
+  justify-items: center;
+}
+
+/* =========================
+   CARD MEMBRO
+========================= */
+
+.member-card {
+
+  width: 100%;
+  max-width: 260px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease;
+}
+
+.member-card:hover {
+
+  transform: translateY(-6px);
+}
+
+
+/* =========================
+   TEXTO MEMBRO
+========================= */
+
+.member-card h3 {
+
+  font-size: 1.25rem;
+
+  color: var(--primary);
+
+  font-family: 'Archivo Black', sans-serif;
+
+  margin-bottom: 14px;
+
+  text-align: center;
+}
+
+.member-card a {
+
+  text-decoration: none;
+
+  color: var(--orange);
+
+  font-size: 1rem;
+
+  transition: 0.25s;
+}
+
+.member-card a:hover {
+
+  color: var(--primary);
+}
+
+/* =========================
+   RESPONSIVO SOBRE
+========================= */
+
+@media (max-width: 700px) {
+
+  .about-subtitle {
+
+    margin-bottom: 55px;
+  }
+
+  .team-grid {
+
+    gap: 55px;
+  }
+
+  
+  .member-card h3 {
+
+    font-size: 1.1rem;
+  }
+}
+
+/* =========================
+   TÍTULOS SOBRE NÓS
+========================= */
+
+.about-section h1 {
+
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  color: var(--primary);
+  font-family: 'Archivo Black', sans-serif;
+  text-align: center;
+  letter-spacing: -1px;
+  margin-top: -40px;
+  margin-bottom: -55px;
+}
+
+.about-subtitle {
+
+  font-size: 22px;
+  color: #3b3b3b;
+  text-align: center;
+  max-width: 720px;
+  line-height: 1.6;
+  margin-bottom: -10px;
 }
