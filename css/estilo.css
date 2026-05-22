@@ -1622,3 +1622,237 @@ input[type="file"] {
   line-height: 1.6;
   margin-bottom: -10px;
 }
+
+/* ESTILIZAÇÃO TELA HOME */
+    /* Topo da pagina */
+
+    .dashboard-hero {
+      text-align: center;
+      padding: 70px 20px 40px;
+    }
+    
+    .dashboard-hero h1 {
+      font-size: 3rem;
+      color: var(--primary);
+      font-family: 'Archivo Black', sans-serif;
+      margin-bottom: 18px;
+    }
+    
+    .dashboard-hero p {
+      font-size: 1.15rem;
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Barra de pesquisa */
+
+    .search-section {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 70px;
+    }
+    
+    .search-box {
+    
+      width: 100%;
+      max-width: 900px;
+      height: 70px;
+      background: white;
+      border: 2px solid rgba(18,16,137,.15);
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      padding: 0 28px;
+      box-shadow: var(--shadow);
+    }
+    
+    .search-box ion-icon {
+      font-size: 1.8rem;
+      color: var(--primary);
+    }
+    
+    .search-box input {
+      flex: 1;
+      border: none;
+      outline: none;
+      margin-left: 16px;
+      font-size: 1rem;
+      background: transparent;
+    }
+
+    /* Menu side bar */
+
+    .sidebar-menu {
+      position: fixed;
+      top: 0;
+      right: -320px;
+      width: 300px;
+      height: 100vh;
+      background: white;
+      box-shadow: -6px 0 20px rgba(0,0,0,.08);
+      transition: .35s;
+      padding: 120px 30px;
+      z-index: 1000;
+    }
+    
+    .sidebar-menu.active {
+      right: 0;
+    }
+    
+    .sidebar-menu a {
+      display: block;
+      margin-bottom: 25px;
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .menu-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--primary);
+      font-size: 3rem;
+    }
+
+    .close-sidebar {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px;
+      margin-bottom: 35px;
+      border: none;
+      background: rgba(18,16,137,.08);
+      color: var(--primary);
+      font-size: 1rem;
+      font-family: 'Actor', sans-serif;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: .25s;
+    }
+    
+    .close-sidebar:hover {
+      background: rgba(18,16,137,.15);
+    }
+    
+    .close-sidebar ion-icon {
+      font-size: 1.4rem;
+    }
+
+    /* PROJETOS */
+
+.projects-section {
+  width: 100%;
+  padding: 0 60px 120px;
+}
+
+.projects-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--primary);
+  font-family: 'Archivo Black', sans-serif;
+  margin-bottom: 45px;
+}
+
+/* GRID */
+
+.projects-grid {
+  max-width: 1500px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+/* CARD E FOTO */
+
+.project-card {
+  background: rgba(255,255,255,.8);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,.12);
+}
+
+.project-image {
+
+  width: calc(100% + 56px);
+  height: 180px;
+  object-fit: cover;
+  margin:
+    -28px
+    -28px
+    20px
+    -28px;
+  border-radius:
+    18px
+    18px
+    0
+    0;
+}
+
+/* TAG */
+
+.project-tag {
+  display: inline-block;
+  background: rgba(18,16,137,.10);
+  color: var(--primary);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: .9rem;
+  margin-bottom: 18px;
+}
+
+/* TITULO */
+
+.project-card h3 {
+  color: var(--primary);
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 1.35rem;
+  margin-bottom: 14px;
+}
+
+/* TEXTO */
+
+.project-card p {
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+/* LINK */
+
+.project-card a {
+  text-decoration: none;
+  color: var(--orange);
+  font-weight: bold;
+  transition: .25s;
+}
+
+.project-card a:hover {
+  color: var(--primary);
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+
+  .projects-section {
+    padding: 0 20px 120px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
